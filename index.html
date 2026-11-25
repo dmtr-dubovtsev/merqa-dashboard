@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мерка — реклама и конверсии</title>
+<style>
+  :root{
+    --bg:#f4f6fb; --card:#fff; --ink:#0f172a; --muted:#64748b; --line:#e6eaf2;
+    --accent:#2563eb; --accent-soft:#dbe6ff; --green:#16a34a; --amber:#d97706; --red:#dc2626;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:22px 20px 48px}
+  header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:#fff;display:grid;place-items:center;font-weight:700;font-size:18px}
+  h1{font-size:19px;margin:0;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+  .meta{text-align:right;font-size:12.5px;color:var(--muted)}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:#e8f7ee;color:#15803d;
+    border-radius:999px;padding:3px 9px;font-size:11.5px;font-weight:600;margin-top:6px}
+  .badge.off{background:#eef1f6;color:#64748b}
+  .dot{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block}
+  .tabs{display:flex;gap:6px;background:#e9edf5;padding:4px;border-radius:10px;width:max-content;margin-bottom:16px}
+  .tab{border:0;background:transparent;padding:7px 14px;border-radius:8px;font:inherit;font-size:13px;
+    color:#475569;cursor:pointer;font-weight:500}
+  .tab.active{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(15,23,42,.12);font-weight:600}
+  .grid{display:grid;gap:12px}
+  .kpis{grid-template-columns:repeat(4,1fr);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .kpi .label{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kpi .value{font-size:27px;font-weight:650;letter-spacing:-.02em;margin-top:6px;font-variant-numeric:tabular-nums}
+  .kpi .value small{font-size:14px;font-weight:500;color:var(--muted);margin-left:3px}
+  .kpi .note{font-size:12px;color:var(--muted);margin-top:4px}
+  .kpi.hl{border-color:#c7d7fe;background:linear-gradient(180deg,#f7f9ff,#fff)}
+  .two{grid-template-columns:1.25fr 1fr;margin-bottom:14px}
+  .card h3{margin:0 0 10px;font-size:13px;font-weight:650;letter-spacing:-.01em}
+  .card h3 span{color:var(--muted);font-weight:500}
+  .chart{width:100%;height:auto;display:block}
+  .legend{display:flex;gap:14px;font-size:12px;color:var(--muted);margin-top:6px;flex-wrap:wrap}
+  .legend i{width:9px;height:9px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);
+    text-align:right;font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th.l,td.l{text-align:left}
+  td{padding:8px;border-bottom:1px solid #f1f4f9;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:#fafbff}
+  .cname{max-width:330px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .pill{display:inline-block;padding:2px 7px;border-radius:999px;font-size:11px;font-weight:600}
+  .pill.zero{background:#f1f5f9;color:#94a3b8}
+  .pill.ok{background:#e8f7ee;color:#15803d}
+  .pill.warn{background:#fef3c7;color:#a16207}
+  .funnel-row{display:grid;grid-template-columns:120px 1fr 92px;gap:12px;align-items:center;margin-bottom:9px}
+  .funnel-row .n{font-size:12.5px;color:#475569}
+  .funnel-row .v{font-size:13px;text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+  .bar{height:26px;border-radius:7px;background:var(--accent-soft);position:relative;overflow:hidden}
+  .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:7px;background:linear-gradient(90deg,#3b82f6,#2563eb)}
+  .funnel-row:nth-child(2) .bar i{background:linear-gradient(90deg,#60a5fa,#3b82f6)}
+  .funnel-row:nth-child(3) .bar i{background:linear-gradient(90deg,#f59e0b,#d97706)}
+  .funnel-row:nth-child(4) .bar i{background:linear-gradient(90deg,#34d399,#16a34a)}
+  footer{margin-top:18px;font-size:12px;color:var(--muted);line-height:1.6}
+  footer ul{margin:6px 0 0;padding-left:18px}
+  .src{display:flex;gap:18px;flex-wrap:wrap;margin-top:6px}
+  .src b{color:#334155;font-weight:600}
+  @media (max-width:900px){
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .two{grid-template-columns:1fr}
+    .cname{max-width:180px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">М</div>
+      <div>
+        <h1>Реклама и конверсии</h1>
+        <div class="sub">merqa.ru · Директ + Метрика</div>
+      </div>
+    </div>
+    <div class="meta">
+      <div id="updated">—</div>
+      <div id="badge" class="badge off"><span class="dot"></span><span id="badge-t">статичный снимок</span></div>
+    </div>
+  </header>
+
+  <div class="tabs" id="tabs"></div>
+  <div class="grid kpis" id="kpis"></div>
+  <div class="grid two">
+    <div class="card"><h3>Сегодня по часам</h3><div id="chart-hourly"></div>
+      <div class="legend"><span><i style="background:#bfdbfe"></i>визиты</span><span><i style="background:#2563eb"></i>открыли конструктор</span></div>
+    </div>
+    <div class="card"><h3>14 дней</h3><div id="chart-daily"></div>
+      <div class="legend"><span><i style="background:#93c5fd"></i>визиты</span><span><i style="background:#16a34a"></i>оформили</span></div>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:14px">
+    <h3>Воронка <span id="funnel-sub"></span></h3>
+    <div id="funnel"></div>
+  </div>
+  <div class="card">
+    <h3>Кампании</h3>
+    <div style="overflow:auto"><table id="campaigns"></table></div>
+  </div>
+  <footer>
+    <div class="src" id="src"></div>
+    <ul id="notes"></ul>
+    <div style="margin-top:8px">Данные обновляются скриптом <code>dashboard/build.py</code>; открытая страница подхватывает свежий <code>data.json</code> каждые 5 минут.</div>
+  </footer>
+</div>
+<script>
+const DATA = {"generated_at": "2026-11-25T21:48:22+05:00", "counter": 113741319, "periods": {"today": {"label": "Сегодня", "from": "2026-11-25", "to": "2026-11-25", "site": {"visits": 174.0, "users": 147.0, "opens": 41.0, "orders": 1.0, "sends": 0.0, "forms": 0.0}, "totals": {"imps": 17161, "clicks": 135, "cost": 1373.15, "visits": 156.0, "users": 139.0, "opens": 35.0, "orders": 1.0, "sends": 0.0, "forms": 0.0, "ctr": 0.7866674436221666, "cpc": 10.171481481481482, "cpa_order": 1373.15, "cpa_open": 39.23285714285714}, "rows": [{"id": "716657694", "name": "РСЯ / Десктопы / За клики", "state": "ON", "imps": 16446, "clicks": 83, "ctr": 0.5, "cpc": 7.73, "cost": 641.43, "visits": 98.0, "users": 83.0, "opens": 0.0, "orders": 1.0, "sends": 0.0, "forms": 0.0}, {"id": "716666638", "name": "Епк / Ручки / Конструктор", "state": "ON", "imps": 415, "clicks": 34, "ctr": 8.19, "cpc": 16.25, "cost": 552.51, "visits": 36.0, "users": 34.0, "opens": 28.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716643821", "name": "Епк / Ручки / Шкафы", "state": "ON", "imps": 43, "clicks": 3, "ctr": 6.98, "cpc": 59.74, "cost": 179.21, "visits": 3.0, "users": 3.0, "opens": 2.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716657317", "name": "merqa.ru от 24.11.26", "state": "", "imps": 217, "clicks": 14, "ctr": 6.45, "cpc": 0.0, "cost": 0.0, "visits": 18.0, "users": 18.0, "opens": 4.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716641960", "name": "merqa.ru от 24.11.26", "state": "", "imps": 34, "clicks": 1, "ctr": 2.94, "cpc": 0.0, "cost": 0.0, "visits": 1.0, "users": 1.0, "opens": 1.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716708067", "name": "Епк / Ручки / Кухни", "state": "ON", "imps": 0, "clicks": 0, "ctr": 0.0, "cpc": 0.0, "cost": 0.0, "visits": 0, "users": 0, "opens": 0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716708993", "name": "Епк / Ручки / Распил", "state": "ON", "imps": 6, "clicks": 0, "ctr": 0.0, "cpc": 0.0, "cost": 0.0, "visits": 0, "users": 0, "opens": 0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716712010", "name": "Епк / Автотаргетинг / Весь сайт", "state": "ON", "imps": 0, "clicks": 0, "ctr": 0.0, "cpc": 0.0, "cost": 0.0, "visits": 0, "users": 0, "opens": 0, "orders": 0, "sends": 0, "forms": 0}]}, "week": {"label": "7 дней", "from": "2026-11-19", "to": "2026-11-25", "site": {"visits": 224.0, "users": 162.0, "opens": 52.0, "orders": 9.0, "sends": 1.0, "forms": 2.0}, "totals": {"imps": 17281, "clicks": 140, "cost": 1373.15, "visits": 160.0, "users": 143.0, "opens": 35.0, "orders": 1.0, "sends": 0.0, "forms": 0.0, "ctr": 0.8101383021815867, "cpc": 9.808214285714286, "cpa_order": 1373.15, "cpa_open": 39.23285714285714}, "rows": [{"id": "716657694", "name": "РСЯ / Десктопы / За клики", "state": "ON", "imps": 16477, "clicks": 83, "ctr": 0.5, "cpc": 7.73, "cost": 641.43, "visits": 98.0, "users": 83.0, "opens": 0.0, "orders": 1.0, "sends": 0.0, "forms": 0.0}, {"id": "716666638", "name": "Епк / Ручки / Конструктор", "state": "ON", "imps": 415, "clicks": 34, "ctr": 8.19, "cpc": 16.25, "cost": 552.51, "visits": 36.0, "users": 34.0, "opens": 28.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716643821", "name": "Епк / Ручки / Шкафы", "state": "ON", "imps": 43, "clicks": 3, "ctr": 6.98, "cpc": 59.74, "cost": 179.21, "visits": 3.0, "users": 3.0, "opens": 2.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716657317", "name": "merqa.ru от 24.11.26", "state": "", "imps": 251, "clicks": 16, "ctr": 6.37, "cpc": 0.0, "cost": 0.0, "visits": 19.0, "users": 19.0, "opens": 4.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716641960", "name": "merqa.ru от 24.11.26", "state": "", "imps": 89, "clicks": 4, "ctr": 4.49, "cpc": 0.0, "cost": 0.0, "visits": 4.0, "users": 4.0, "opens": 1.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716708067", "name": "Епк / Ручки / Кухни", "state": "ON", "imps": 0, "clicks": 0, "ctr": 0.0, "cpc": 0.0, "cost": 0.0, "visits": 0, "users": 0, "opens": 0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716708993", "name": "Епк / Ручки / Распил", "state": "ON", "imps": 6, "clicks": 0, "ctr": 0.0, "cpc": 0.0, "cost": 0.0, "visits": 0, "users": 0, "opens": 0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716712010", "name": "Епк / Автотаргетинг / Весь сайт", "state": "ON", "imps": 0, "clicks": 0, "ctr": 0.0, "cpc": 0.0, "cost": 0.0, "visits": 0, "users": 0, "opens": 0, "orders": 0, "sends": 0, "forms": 0}]}, "month": {"label": "30 дней", "from": "2026-10-27", "to": "2026-11-25", "site": {"visits": 290.0, "users": 173.0, "opens": 52.0, "orders": 9.0, "sends": 1.0, "forms": 2.0}, "totals": {"imps": 19488, "clicks": 154, "cost": 1483.83, "visits": 160.0, "users": 143.0, "opens": 35.0, "orders": 1.0, "sends": 0.0, "forms": 0.0, "ctr": 0.7902298850574714, "cpc": 9.63525974025974, "cpa_order": 1483.83, "cpa_open": 42.39514285714286}, "rows": [{"id": "716657694", "name": "РСЯ / Десктопы / За клики", "state": "ON", "imps": 18668, "clicks": 93, "ctr": 0.5, "cpc": 8.09, "cost": 752.11, "visits": 98.0, "users": 83.0, "opens": 0.0, "orders": 1.0, "sends": 0.0, "forms": 0.0}, {"id": "716666638", "name": "Епк / Ручки / Конструктор", "state": "ON", "imps": 418, "clicks": 34, "ctr": 8.13, "cpc": 16.25, "cost": 552.51, "visits": 36.0, "users": 34.0, "opens": 28.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716643821", "name": "Епк / Ручки / Шкафы", "state": "ON", "imps": 44, "clicks": 3, "ctr": 6.82, "cpc": 59.74, "cost": 179.21, "visits": 3.0, "users": 3.0, "opens": 2.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716657317", "name": "merqa.ru от 24.11.26", "state": "", "imps": 258, "clicks": 20, "ctr": 7.75, "cpc": 0.0, "cost": 0.0, "visits": 19.0, "users": 19.0, "opens": 4.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716641960", "name": "merqa.ru от 24.11.26", "state": "", "imps": 90, "clicks": 4, "ctr": 4.44, "cpc": 0.0, "cost": 0.0, "visits": 4.0, "users": 4.0, "opens": 1.0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716708067", "name": "Епк / Ручки / Кухни", "state": "ON", "imps": 0, "clicks": 0, "ctr": 0.0, "cpc": 0.0, "cost": 0.0, "visits": 0, "users": 0, "opens": 0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716708993", "name": "Епк / Ручки / Распил", "state": "ON", "imps": 10, "clicks": 0, "ctr": 0.0, "cpc": 0.0, "cost": 0.0, "visits": 0, "users": 0, "opens": 0, "orders": 0, "sends": 0, "forms": 0}, {"id": "716712010", "name": "Епк / Автотаргетинг / Весь сайт", "state": "ON", "imps": 0, "clicks": 0, "ctr": 0.0, "cpc": 0.0, "cost": 0.0, "visits": 0, "users": 0, "opens": 0, "orders": 0, "sends": 0, "forms": 0}]}}, "hourly": [{"h": 0, "visits": 2.0, "opens": 1.0, "orders": 0.0, "sends": 0.0}, {"h": 1, "visits": 0.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}, {"h": 2, "visits": 3.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}, {"h": 3, "visits": 0.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}, {"h": 4, "visits": 0.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}, {"h": 5, "visits": 2.0, "opens": 5.0, "orders": 0.0, "sends": 0.0}, {"h": 6, "visits": 0.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}, {"h": 7, "visits": 2.0, "opens": 2.0, "orders": 0.0, "sends": 0.0}, {"h": 8, "visits": 3.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}, {"h": 9, "visits": 6.0, "opens": 4.0, "orders": 0.0, "sends": 0.0}, {"h": 10, "visits": 2.0, "opens": 2.0, "orders": 0.0, "sends": 0.0}, {"h": 11, "visits": 6.0, "opens": 3.0, "orders": 0.0, "sends": 0.0}, {"h": 12, "visits": 7.0, "opens": 4.0, "orders": 0.0, "sends": 0.0}, {"h": 13, "visits": 4.0, "opens": 3.0, "orders": 0.0, "sends": 0.0}, {"h": 14, "visits": 4.0, "opens": 3.0, "orders": 0.0, "sends": 0.0}, {"h": 15, "visits": 6.0, "opens": 4.0, "orders": 0.0, "sends": 0.0}, {"h": 16, "visits": 7.0, "opens": 2.0, "orders": 0.0, "sends": 0.0}, {"h": 17, "visits": 19.0, "opens": 1.0, "orders": 0.0, "sends": 0.0}, {"h": 18, "visits": 27.0, "opens": 5.0, "orders": 1.0, "sends": 0.0}, {"h": 19, "visits": 32.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}, {"h": 20, "visits": 28.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}, {"h": 21, "visits": 14.0, "opens": 2.0, "orders": 0.0, "sends": 0.0}, {"h": 22, "visits": 0.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}, {"h": 23, "visits": 0.0, "opens": 0.0, "orders": 0.0, "sends": 0.0}], "daily": [{"d": "2026-11-12", "visits": 5.0, "users": 3.0, "opens": 0.0, "orders": 0, "sends": 0, "forms": 0}, {"d": "2026-11-13", "visits": 5.0, "users": 2.0, "opens": 0.0, "orders": 0, "sends": 0, "forms": 0}, {"d": "2026-11-14", "visits": 6.0, "users": 2.0, "opens": 0.0, "orders": 0, "sends": 0, "forms": 0}, {"d": "2026-11-16", "visits": 4.0, "users": 3.0, "opens": 0.0, "orders": 0, "sends": 0, "forms": 0}, {"d": "2026-11-17", "visits": 8.0, "users": 2.0, "opens": 0.0, "orders": 0, "sends": 0, "forms": 0}, {"d": "2026-11-18", "visits": 4.0, "users": 2.0, "opens": 0.0, "orders": 0, "sends": 0, "forms": 0}, {"d": "2026-11-19", "visits": 7.0, "users": 4.0, "opens": 0.0, "orders": 0, "sends": 0, "forms": 0}, {"d": "2026-11-20", "visits": 7.0, "users": 3.0, "opens": 0.0, "orders": 0, "sends": 0, "forms": 0}, {"d": "2026-11-21", "visits": 6.0, "users": 2.0, "opens": 0.0, "orders": 0.0, "sends": 0.0, "forms": 1.0}, {"d": "2026-11-22", "visits": 7.0, "users": 4.0, "opens": 3.0, "orders": 5.0, "sends": 0.0, "forms": 0.0}, {"d": "2026-11-23", "visits": 6.0, "users": 4.0, "opens": 5.0, "orders": 2.0, "sends": 1.0, "forms": 1.0}, {"d": "2026-11-24", "visits": 17.0, "users": 11.0, "opens": 3.0, "orders": 1.0, "sends": 0.0, "forms": 0.0}, {"d": "2026-11-25", "visits": 174.0, "users": 147.0, "opens": 41.0, "orders": 1.0, "sends": 0.0, "forms": 0.0}], "notes": ["Расход и клики — отчёт Директа (по текущему дню может отставать), конверсии — Метрика по последнему клику.", "Общие цели 697800506 / 697805485 / 697806525 не работают: в них другие идентификаторы событий.", "Заявка — автоцель Метрики 684840552 «отправка формы»."]};
+
+const f0 = new Intl.NumberFormat('ru-RU', {maximumFractionDigits:0});
+const f1 = new Intl.NumberFormat('ru-RU', {minimumFractionDigits:1, maximumFractionDigits:1});
+const f2 = new Intl.NumberFormat('ru-RU', {minimumFractionDigits:2, maximumFractionDigits:2});
+const money = v => f0.format(Math.round(v||0)) + ' ₽';
+const pct = v => f1.format(v||0) + '%';
+const num = v => f0.format(v||0);
+
+let period = 'today';
+
+function el(tag, cls, html){ const e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
+
+function renderTabs(){
+  const box = document.getElementById('tabs');
+  box.innerHTML = '';
+  Object.entries(DATA.periods).forEach(([k,p])=>{
+    const b = el('button','tab'+(k===period?' active':''), p.label);
+    b.onclick = ()=>{ period=k; render(); };
+    box.appendChild(b);
+  });
+}
+
+function renderKpis(){
+  const p = DATA.periods[period], t = p.totals;
+  const box = document.getElementById('kpis'); box.innerHTML='';
+  const card = (label, value, note, hl) => {
+    const c = el('div','card kpi'+(hl?' hl':''));
+    c.appendChild(el('div','label',label));
+    c.appendChild(el('div','value',value));
+    c.appendChild(el('div','note',note));
+    box.appendChild(c);
+  };
+  card('Расход', money(t.cost), t.clicks + ' кликов · CPC ' + f2.format(t.cpc||0) + ' ₽');
+  card('Клики', num(t.clicks), 'CTR ' + pct(t.ctr) + ' · ' + num(t.imps) + ' показов');
+  card('Визиты из рекламы', num(t.visits), 'из них ' + num(t.users) + ' человек');
+  card('Открыли конструктор', num(t.opens), 'клик → открытие ' + pct(t.clicks ? t.opens/t.clicks*100 : 0));
+  card('Оформили заказ', num(t.orders), 'открытие → оформление ' + pct(t.opens ? t.orders/t.opens*100 : 0));
+  card('Отправили заказ', num(t.sends), 'оформление → отправка ' + pct(t.orders ? t.sends/t.orders*100 : 0));
+  card('Заявки (форма)', num(t.forms), 'автоцель Метрики');
+  card('CPA «оформить»', t.orders ? money(t.cpa_order) : '—', t.orders ? 'цена оформления' : 'оформлений пока нет', true);
+}
+
+function renderFunnel(){
+  const p = DATA.periods[period], t = p.totals;
+  const box = document.getElementById('funnel'); box.innerHTML='';
+  const stages = [
+    ['Визиты из рекламы', t.visits],
+    ['Открыли конструктор', t.opens],
+    ['Оформили заказ', t.orders],
+    ['Отправили заказ', t.sends],
+  ];
+  const max = Math.max(1, t.visits);
+  stages.forEach(([name, val], i)=>{
+    const row = el('div','funnel-row');
+    row.appendChild(el('div','n',name));
+    const b = el('div','bar'); const fill = el('i');
+    fill.style.width = Math.max(1.5, val/max*100) + '%';
+    if(!val) fill.style.opacity = .25;
+    b.appendChild(fill); row.appendChild(b);
+    const prev = i ? stages[i-1][1] : 0;
+    row.appendChild(el('div','v', num(val) + (i ? ' · ' + pct(prev ? val/prev*100 : 0) : '')));
+    box.appendChild(row);
+  });
+  document.getElementById('funnel-sub').textContent = '· ' + p.label + ' (' + p.from + ' — ' + p.to + ')';
+}
+
+function svgHourly(){
+  const h = DATA.hourly || [];
+  const W=560, H=170, pad={l:6,r:6,t:8,b:22};
+  const max = Math.max(1, ...h.map(x=>x.visits), ...h.map(x=>x.opens));
+  const bw = (W-pad.l-pad.r)/24;
+  let bars='', line=[], dots='', labels='';
+  h.forEach((x,i)=>{
+    const hh = (H-pad.t-pad.b) * (x.visits/max);
+    bars += `<rect x="${pad.l+i*bw+1.5}" y="${H-pad.b-hh}" width="${bw-3}" height="${hh}" rx="2" fill="#bfdbfe"/>`;
+    const oy = H-pad.b - (H-pad.t-pad.b)*(x.opens/max);
+    line.push(`${pad.l+i*bw+bw/2},${oy}`);
+    if(x.opens) dots += `<circle cx="${pad.l+i*bw+bw/2}" cy="${oy}" r="2.6" fill="#2563eb"/>`;
+    if(i%3===0) labels += `<text x="${pad.l+i*bw+bw/2}" y="${H-6}" font-size="9" fill="#94a3b8" text-anchor="middle">${String(x.h).padStart(2,'0')}</text>`;
+  });
+  const path = line.length ? `<polyline points="${line.join(' ')}" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linejoin="round"/>` : '';
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${bars}${path}${dots}${labels}</svg>`;
+}
+
+function svgDaily(){
+  const d = DATA.daily || [];
+  const W=430, H=170, pad={l:8,r:8,t:8,b:22};
+  const max = Math.max(1, ...d.map(x=>x.visits));
+  const step = d.length>1 ? (W-pad.l-pad.r)/(d.length-1) : 0;
+  let pv=[], po=[], labels='', dots='';
+  d.forEach((x,i)=>{
+    const px = pad.l + i*step;
+    pv.push(`${px},${H-pad.b-(H-pad.t-pad.b)*(x.visits/max)}`);
+    po.push(`${px},${H-pad.b-(H-pad.t-pad.b)*(x.orders/max)}`);
+    if(i%3===0 || i===d.length-1) labels += `<text x="${px}" y="${H-6}" font-size="9" fill="#94a3b8" text-anchor="${i===d.length-1?'end':'middle'}">${x.d.slice(8,10)}.${x.d.slice(5,7)}</text>`;
+    if(x.orders) dots += `<circle cx="${px}" cy="${po[po.length-1].split(',')[1]}" r="2.4" fill="#16a34a"/>`;
+  });
+  const mk = (pts,c) => pts.length>1 ? `<polyline points="${pts.join(' ')}" fill="none" stroke="${c}" stroke-width="2" stroke-linejoin="round"/>` : '';
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${labels}${mk(pv,'#93c5fd')}${mk(po,'#16a34a')}${dots}</svg>`;
+}
+
+function renderCampaigns(){
+  const p = DATA.periods[period];
+  const tbl = document.getElementById('campaigns');
+  const head = ['Кампания','Показы','Клики','CTR','CPC','Расход','Визиты','Открыли','Оформили','Отправили','CPA оформл.'];
+  let html = '<thead><tr>' + head.map((h,i)=>`<th class="${i===0?'l':''}">${h}</th>`).join('') + '</tr></thead><tbody>';
+  const rows = (p.rows||[]).slice();
+  if(!rows.length){ html += `<tr><td class="l" colspan="11" style="color:#94a3b8">За период данных нет</td></tr>`; }
+  rows.forEach(r=>{
+    const cpa = r.orders ? money(r.cost/r.orders) : '—';
+    const noShow = r.imps === 0;
+    html += '<tr>'
+      + `<td class="l cname" title="${r.name}">${noShow ? '<span class="pill zero">без показов</span> ' : ''}${r.name}</td>`
+      + `<td>${num(r.imps)}</td><td>${num(r.clicks)}</td>`
+      + `<td>${pct(r.ctr)}</td><td>${f2.format(r.cpc||0)} ₽</td><td>${money(r.cost)}</td>`
+      + `<td>${num(r.visits)}</td><td>${num(r.opens)}</td>`
+      + `<td>${r.orders ? '<span class="pill ok">'+num(r.orders)+'</span>' : '<span class="pill zero">0</span>'}</td>`
+      + `<td>${r.sends ? '<span class="pill ok">'+num(r.sends)+'</span>' : '<span class="pill zero">0</span>'}</td>`
+      + `<td>${cpa}</td></tr>`;
+  });
+  html += '</tbody>';
+  tbl.innerHTML = html;
+}
+
+function renderMeta(){
+  const p = DATA.periods[period], s = p.site||{};
+  document.getElementById('updated').textContent = 'обновлено ' + (DATA.generated_at||'').replace('T',' ').slice(0,16);
+  document.getElementById('src').innerHTML =
+    `<span>Сайт целиком: <b>${num(s.visits)}</b> визитов</span>` +
+    `<span>Открыли конструктор: <b>${num(s.opens)}</b></span>` +
+    `<span>Оформили: <b>${num(s.orders)}</b></span>` +
+    `<span>Отправили: <b>${num(s.sends)}</b></span>` +
+    `<span>Заявки: <b>${num(s.forms)}</b></span>`;
+  document.getElementById('notes').innerHTML = (DATA.notes||[]).map(n=>`<li>${n}</li>`).join('');
+}
+
+function render(){
+  renderTabs(); renderKpis(); renderFunnel();
+  document.getElementById('chart-hourly').innerHTML = svgHourly();
+  document.getElementById('chart-daily').innerHTML = svgDaily();
+  renderCampaigns(); renderMeta();
+}
+
+function badge(text, on){
+  document.getElementById('badge-t').textContent = text;
+  document.getElementById('badge').className = 'badge' + (on ? '' : ' off');
+}
+
+async function refresh(){
+  try{
+    const r = await fetch('data.json?t=' + Date.now(), {cache:'no-store'});
+    if(!r.ok) throw new Error('no data.json');
+    const j = await r.json();
+    if(j && j.generated_at){
+      Object.assign(DATA, j);
+      render();
+      badge('автообновление · ' + j.generated_at.slice(11,16), true);
+    }
+  }catch(e){ badge('статичный снимок', false); }
+}
+
+render();
+refresh();
+setInterval(refresh, 300000);
+</script>
+</body>
+</html>
