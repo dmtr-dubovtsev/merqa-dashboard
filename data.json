@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T14:52:36+05:00",
+ "generated_at": "2026-11-26T15:22:03+05:00",
  "counter": 113741319,
  "periods": {
   "all": {
@@ -7,92 +7,98 @@
    "from": "2026-10-22",
    "to": "2026-11-26",
    "site": {
-    "visits": 542.0,
-    "users": 374.0,
-    "opens": 65.0,
-    "orders": 9.0,
-    "sends": 1.0,
-    "forms": 4.0
+    "visits": 548.0,
+    "users": 380.0,
+    "opens": 27.0,
+    "cart_add": 1.0,
+    "orders": 0.0,
+    "sends": 0.0,
+    "cart_send": 1.0
    },
    "totals": {
-    "imps": 86764,
-    "clicks": 475,
-    "cost": 5893.18,
-    "visits": 368.0,
-    "users": 328.0,
-    "opens": 47.0,
-    "orders": 1.0,
+    "imps": 89539,
+    "clicks": 485,
+    "cost": 6039.1,
+    "visits": 373.0,
+    "users": 333.0,
+    "opens": 25.0,
+    "orders": 0.0,
     "sends": 0.0,
-    "forms": 2.0,
-    "ctr": 0.547462081047439,
-    "cpc": 12.406694736842105,
-    "cpa_order": 5893.18,
-    "cpa_open": 125.3868085106383
+    "cart_add": 1.0,
+    "cart_send": 1.0,
+    "ctr": 0.541663409240666,
+    "cpc": 12.451752577319589,
+    "cpa_order": 0,
+    "cpa_open": 241.56400000000002
    },
    "rows": [
     {
      "id": "716657694",
      "name": "РСЯ / Десктопы / За клики",
      "state": "ON",
-     "imps": 85064,
-     "clicks": 339,
-     "ctr": 0.4,
-     "cpc": 8.52,
-     "cost": 2886.9,
-     "visits": 244.0,
-     "users": 211.0,
-     "opens": 2.0,
-     "orders": 1.0,
-     "sends": 0.0,
-     "forms": 0.0
+     "imps": 87801,
+     "clicks": 346,
+     "ctr": 0.39,
+     "cpc": 8.51,
+     "cost": 2944.76,
+     "visits": 247.0,
+     "users": 214.0,
+     "opens": 4.0,
+     "orders": 0,
+     "sends": 0,
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716708993",
      "name": "Епк / Ручки / Распил",
      "state": "ON",
-     "imps": 380,
+     "imps": 388,
      "clicks": 19,
-     "ctr": 5.0,
+     "ctr": 4.9,
      "cpc": 61.33,
      "cost": 1165.21,
      "visits": 17.0,
      "users": 14.0,
-     "opens": 1.0,
+     "opens": 2.0,
      "orders": 0.0,
      "sends": 0.0,
-     "forms": 2.0
+     "cart_add": 1.0,
+     "cart_send": 1.0
     },
     {
      "id": "716666638",
      "name": "Епк / Ручки / Конструктор",
      "state": "ON",
-     "imps": 462,
-     "clicks": 44,
-     "ctr": 9.52,
-     "cpc": 24.36,
-     "cost": 1071.78,
-     "visits": 41.0,
-     "users": 39.0,
-     "opens": 31.0,
+     "imps": 463,
+     "clicks": 46,
+     "ctr": 9.94,
+     "cpc": 25.21,
+     "cost": 1159.84,
+     "visits": 43.0,
+     "users": 41.0,
+     "opens": 7.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716712010",
      "name": "Епк / Автотаргетинг / Весь сайт",
      "state": "ON",
-     "imps": 250,
+     "imps": 271,
      "clicks": 29,
-     "ctr": 11.6,
+     "ctr": 10.7,
      "cpc": 20.13,
      "cost": 583.75,
      "visits": 27.0,
      "users": 25.0,
-     "opens": 3.0,
+     "opens": 7.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716643821",
@@ -105,26 +111,28 @@
      "cost": 185.54,
      "visits": 3.0,
      "users": 3.0,
-     "opens": 2.0,
+     "opens": 0.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716657317",
      "name": "merqa.ru от 24.11.26",
      "state": "",
-     "imps": 399,
-     "clicks": 34,
-     "ctr": 8.52,
+     "imps": 405,
+     "clicks": 35,
+     "ctr": 8.64,
      "cpc": 0.0,
      "cost": 0.0,
      "visits": 30.0,
      "users": 30.0,
-     "opens": 6.0,
+     "opens": 4.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716641960",
@@ -137,16 +145,17 @@
      "cost": 0.0,
      "visits": 6.0,
      "users": 6.0,
-     "opens": 2.0,
+     "opens": 1.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716708067",
      "name": "Епк / Ручки / Кухни",
      "state": "ON",
-     "imps": 12,
+     "imps": 14,
      "clicks": 0,
      "ctr": 0.0,
      "cpc": 0.0,
@@ -156,7 +165,8 @@
      "opens": 0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0,
+     "cart_send": 0
     }
    ]
   },
@@ -165,108 +175,115 @@
    "from": "2026-11-26",
    "to": "2026-11-26",
    "site": {
-    "visits": 167.0,
-    "users": 152.0,
-    "opens": 9.0,
+    "visits": 173.0,
+    "users": 158.0,
+    "opens": 24.0,
+    "cart_add": 1.0,
     "orders": 0.0,
     "sends": 0.0,
-    "forms": 2.0
+    "cart_send": 1.0
    },
    "totals": {
-    "imps": 37083,
-    "clicks": 153,
-    "cost": 2642.63,
-    "visits": 150.0,
-    "users": 140.0,
-    "opens": 9.0,
+    "imps": 39829,
+    "clicks": 163,
+    "cost": 2788.54,
+    "visits": 155.0,
+    "users": 145.0,
+    "opens": 23.0,
     "orders": 0.0,
     "sends": 0.0,
-    "forms": 2.0,
-    "ctr": 0.4125879783189062,
-    "cpc": 17.272091503267976,
+    "cart_add": 1.0,
+    "cart_send": 1.0,
+    "ctr": 0.40924954179115725,
+    "cpc": 17.10760736196319,
     "cpa_order": 0,
-    "cpa_open": 293.6255555555556
+    "cpa_open": 121.2408695652174
    },
    "rows": [
     {
      "id": "716657694",
      "name": "РСЯ / Десктопы / За клики",
      "state": "ON",
-     "imps": 36496,
-     "clicks": 104,
+     "imps": 39205,
+     "clicks": 111,
      "ctr": 0.28,
-     "cpc": 10.13,
-     "cost": 1053.4,
-     "visits": 101.0,
-     "users": 95.0,
-     "opens": 2.0,
+     "cpc": 10.01,
+     "cost": 1111.26,
+     "visits": 104.0,
+     "users": 98.0,
+     "opens": 4.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716708993",
      "name": "Епк / Ручки / Распил",
      "state": "ON",
-     "imps": 219,
+     "imps": 227,
      "clicks": 12,
-     "ctr": 5.48,
+     "ctr": 5.29,
      "cpc": 69.95,
      "cost": 839.45,
      "visits": 15.0,
      "users": 13.0,
-     "opens": 1.0,
+     "opens": 2.0,
      "orders": 0.0,
      "sends": 0.0,
-     "forms": 2.0
+     "cart_add": 1.0,
+     "cart_send": 1.0
     },
     {
      "id": "716712010",
      "name": "Епк / Автотаргетинг / Весь сайт",
      "state": "ON",
-     "imps": 218,
+     "imps": 238,
      "clicks": 24,
-     "ctr": 11.01,
+     "ctr": 10.08,
      "cpc": 21.39,
      "cost": 513.42,
      "visits": 24.0,
      "users": 22.0,
-     "opens": 2.0,
+     "opens": 5.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716666638",
      "name": "Епк / Ручки / Конструктор",
      "state": "ON",
-     "imps": 19,
-     "clicks": 6,
-     "ctr": 31.58,
-     "cpc": 39.39,
-     "cost": 236.36,
-     "visits": 3.0,
-     "users": 3.0,
-     "opens": 2.0,
+     "imps": 20,
+     "clicks": 8,
+     "ctr": 40.0,
+     "cpc": 40.55,
+     "cost": 324.41,
+     "visits": 5.0,
+     "users": 5.0,
+     "opens": 7.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716657317",
      "name": "merqa.ru от 24.11.26",
      "state": "",
-     "imps": 82,
-     "clicks": 6,
-     "ctr": 7.32,
+     "imps": 88,
+     "clicks": 7,
+     "ctr": 7.95,
      "cpc": 0.0,
      "cost": 0.0,
      "visits": 6.0,
      "users": 6.0,
-     "opens": 1.0,
+     "opens": 4.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716641960",
@@ -282,13 +299,14 @@
      "opens": 1.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716708067",
      "name": "Епк / Ручки / Кухни",
      "state": "ON",
-     "imps": 12,
+     "imps": 14,
      "clicks": 0,
      "ctr": 0.0,
      "cpc": 0.0,
@@ -298,7 +316,8 @@
      "opens": 0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0,
+     "cart_send": 0
     },
     {
      "id": "716643821",
@@ -314,7 +333,8 @@
      "opens": 0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0,
+     "cart_send": 0
     }
    ]
   },
@@ -323,92 +343,98 @@
    "from": "2026-11-20",
    "to": "2026-11-26",
    "site": {
-    "visits": 447.0,
-    "users": 352.0,
-    "opens": 65.0,
-    "orders": 9.0,
-    "sends": 1.0,
-    "forms": 4.0
+    "visits": 454.0,
+    "users": 358.0,
+    "opens": 29.0,
+    "cart_add": 1.0,
+    "orders": 0.0,
+    "sends": 0.0,
+    "cart_send": 1.0
    },
    "totals": {
-    "imps": 87130,
-    "clicks": 476,
-    "cost": 5930.99,
-    "visits": 368.0,
-    "users": 328.0,
-    "opens": 47.0,
-    "orders": 1.0,
+    "imps": 89546,
+    "clicks": 485,
+    "cost": 6039.1,
+    "visits": 373.0,
+    "users": 333.0,
+    "opens": 26.0,
+    "orders": 0.0,
     "sends": 0.0,
-    "forms": 2.0,
-    "ctr": 0.5463101113279009,
-    "cpc": 12.460063025210083,
-    "cpa_order": 5930.99,
-    "cpa_open": 126.19127659574468
+    "cart_add": 1.0,
+    "cart_send": 1.0,
+    "ctr": 0.5416210662676166,
+    "cpc": 12.451752577319589,
+    "cpa_order": 0,
+    "cpa_open": 232.27307692307693
    },
    "rows": [
     {
      "id": "716657694",
      "name": "РСЯ / Десктопы / За клики",
      "state": "ON",
-     "imps": 85425,
-     "clicks": 339,
-     "ctr": 0.4,
-     "cpc": 8.52,
-     "cost": 2886.9,
-     "visits": 244.0,
-     "users": 211.0,
-     "opens": 2.0,
-     "orders": 1.0,
-     "sends": 0.0,
-     "forms": 0.0
+     "imps": 87808,
+     "clicks": 346,
+     "ctr": 0.39,
+     "cpc": 8.51,
+     "cost": 2944.76,
+     "visits": 247.0,
+     "users": 214.0,
+     "opens": 4.0,
+     "orders": 0,
+     "sends": 0,
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716708993",
      "name": "Епк / Ручки / Распил",
      "state": "ON",
-     "imps": 381,
+     "imps": 388,
      "clicks": 19,
-     "ctr": 4.99,
+     "ctr": 4.9,
      "cpc": 61.33,
      "cost": 1165.21,
      "visits": 17.0,
      "users": 14.0,
-     "opens": 1.0,
+     "opens": 2.0,
      "orders": 0.0,
      "sends": 0.0,
-     "forms": 2.0
+     "cart_add": 1.0,
+     "cart_send": 1.0
     },
     {
      "id": "716666638",
      "name": "Епк / Ручки / Конструктор",
      "state": "ON",
      "imps": 463,
-     "clicks": 45,
-     "ctr": 9.72,
-     "cpc": 24.66,
-     "cost": 1109.59,
-     "visits": 41.0,
-     "users": 39.0,
-     "opens": 31.0,
+     "clicks": 46,
+     "ctr": 9.94,
+     "cpc": 25.21,
+     "cost": 1159.84,
+     "visits": 43.0,
+     "users": 41.0,
+     "opens": 8.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716712010",
      "name": "Епк / Автотаргетинг / Весь сайт",
      "state": "ON",
-     "imps": 252,
+     "imps": 271,
      "clicks": 29,
-     "ctr": 11.51,
+     "ctr": 10.7,
      "cpc": 20.13,
      "cost": 583.75,
      "visits": 27.0,
      "users": 25.0,
-     "opens": 3.0,
+     "opens": 7.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716643821",
@@ -421,26 +447,28 @@
      "cost": 185.54,
      "visits": 3.0,
      "users": 3.0,
-     "opens": 2.0,
+     "opens": 0.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716657317",
      "name": "merqa.ru от 24.11.26",
      "state": "",
-     "imps": 400,
-     "clicks": 34,
-     "ctr": 8.5,
+     "imps": 405,
+     "clicks": 35,
+     "ctr": 8.64,
      "cpc": 0.0,
      "cost": 0.0,
      "visits": 30.0,
      "users": 30.0,
-     "opens": 6.0,
+     "opens": 4.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716641960",
@@ -453,16 +481,17 @@
      "cost": 0.0,
      "visits": 6.0,
      "users": 6.0,
-     "opens": 2.0,
+     "opens": 1.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716708067",
      "name": "Епк / Ручки / Кухни",
      "state": "ON",
-     "imps": 12,
+     "imps": 14,
      "clicks": 0,
      "ctr": 0.0,
      "cpc": 0.0,
@@ -472,7 +501,8 @@
      "opens": 0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0,
+     "cart_send": 0
     }
    ]
   },
@@ -481,92 +511,98 @@
    "from": "2026-10-28",
    "to": "2026-11-26",
    "site": {
-    "visits": 519.0,
-    "users": 365.0,
-    "opens": 65.0,
-    "orders": 9.0,
-    "sends": 1.0,
-    "forms": 4.0
+    "visits": 525.0,
+    "users": 371.0,
+    "opens": 27.0,
+    "cart_add": 1.0,
+    "orders": 0.0,
+    "sends": 0.0,
+    "cart_send": 1.0
    },
    "totals": {
-    "imps": 87020,
-    "clicks": 476,
-    "cost": 5930.99,
-    "visits": 368.0,
-    "users": 328.0,
-    "opens": 47.0,
-    "orders": 1.0,
+    "imps": 89550,
+    "clicks": 485,
+    "cost": 6039.1,
+    "visits": 373.0,
+    "users": 333.0,
+    "opens": 26.0,
+    "orders": 0.0,
     "sends": 0.0,
-    "forms": 2.0,
-    "ctr": 0.5470006894966674,
-    "cpc": 12.460063025210083,
-    "cpa_order": 5930.99,
-    "cpa_open": 126.19127659574468
+    "cart_add": 1.0,
+    "cart_send": 1.0,
+    "ctr": 0.5415968732551647,
+    "cpc": 12.451752577319589,
+    "cpa_order": 0,
+    "cpa_open": 232.27307692307693
    },
    "rows": [
     {
      "id": "716657694",
      "name": "РСЯ / Десктопы / За клики",
      "state": "ON",
-     "imps": 85315,
-     "clicks": 339,
-     "ctr": 0.4,
-     "cpc": 8.52,
-     "cost": 2886.9,
-     "visits": 244.0,
-     "users": 211.0,
-     "opens": 2.0,
-     "orders": 1.0,
-     "sends": 0.0,
-     "forms": 0.0
+     "imps": 87812,
+     "clicks": 346,
+     "ctr": 0.39,
+     "cpc": 8.51,
+     "cost": 2944.76,
+     "visits": 247.0,
+     "users": 214.0,
+     "opens": 4.0,
+     "orders": 0,
+     "sends": 0,
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716708993",
      "name": "Епк / Ручки / Распил",
      "state": "ON",
-     "imps": 381,
+     "imps": 388,
      "clicks": 19,
-     "ctr": 4.99,
+     "ctr": 4.9,
      "cpc": 61.33,
      "cost": 1165.21,
      "visits": 17.0,
      "users": 14.0,
-     "opens": 1.0,
+     "opens": 2.0,
      "orders": 0.0,
      "sends": 0.0,
-     "forms": 2.0
+     "cart_add": 1.0,
+     "cart_send": 1.0
     },
     {
      "id": "716666638",
      "name": "Епк / Ручки / Конструктор",
      "state": "ON",
      "imps": 463,
-     "clicks": 45,
-     "ctr": 9.72,
-     "cpc": 24.66,
-     "cost": 1109.59,
-     "visits": 41.0,
-     "users": 39.0,
-     "opens": 31.0,
+     "clicks": 46,
+     "ctr": 9.94,
+     "cpc": 25.21,
+     "cost": 1159.84,
+     "visits": 43.0,
+     "users": 41.0,
+     "opens": 8.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716712010",
      "name": "Епк / Автотаргетинг / Весь сайт",
      "state": "ON",
-     "imps": 252,
+     "imps": 271,
      "clicks": 29,
-     "ctr": 11.51,
+     "ctr": 10.7,
      "cpc": 20.13,
      "cost": 583.75,
      "visits": 27.0,
      "users": 25.0,
-     "opens": 3.0,
+     "opens": 7.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716643821",
@@ -579,26 +615,28 @@
      "cost": 185.54,
      "visits": 3.0,
      "users": 3.0,
-     "opens": 2.0,
+     "opens": 0.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716657317",
      "name": "merqa.ru от 24.11.26",
      "state": "",
-     "imps": 400,
-     "clicks": 34,
-     "ctr": 8.5,
+     "imps": 405,
+     "clicks": 35,
+     "ctr": 8.64,
      "cpc": 0.0,
      "cost": 0.0,
      "visits": 30.0,
      "users": 30.0,
-     "opens": 6.0,
+     "opens": 4.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716641960",
@@ -611,16 +649,17 @@
      "cost": 0.0,
      "visits": 6.0,
      "users": 6.0,
-     "opens": 2.0,
+     "opens": 1.0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0.0,
+     "cart_send": 0
     },
     {
      "id": "716708067",
      "name": "Епк / Ручки / Кухни",
      "state": "ON",
-     "imps": 12,
+     "imps": 14,
      "clicks": 0,
      "ctr": 0.0,
      "cpc": 0.0,
@@ -630,7 +669,8 @@
      "opens": 0,
      "orders": 0,
      "sends": 0,
-     "forms": 0
+     "cart_add": 0,
+     "cart_send": 0
     }
    ]
   }
@@ -667,7 +707,7 @@
   {
    "h": 4,
    "visits": 2.0,
-   "opens": 0.0,
+   "opens": 1.0,
    "orders": 0.0,
    "sends": 0.0
   },
@@ -709,42 +749,42 @@
   {
    "h": 10,
    "visits": 25.0,
-   "opens": 0.0,
+   "opens": 1.0,
    "orders": 0.0,
    "sends": 0.0
   },
   {
    "h": 11,
    "visits": 19.0,
-   "opens": 2.0,
+   "opens": 3.0,
    "orders": 0.0,
    "sends": 0.0
   },
   {
    "h": 12,
    "visits": 17.0,
-   "opens": 2.0,
+   "opens": 5.0,
    "orders": 0.0,
    "sends": 0.0
   },
   {
    "h": 13,
    "visits": 15.0,
-   "opens": 2.0,
+   "opens": 3.0,
    "orders": 0.0,
    "sends": 0.0
   },
   {
    "h": 14,
    "visits": 21.0,
-   "opens": 3.0,
+   "opens": 9.0,
    "orders": 0.0,
    "sends": 0.0
   },
   {
    "h": 15,
-   "visits": 0.0,
-   "opens": 0.0,
+   "visits": 7.0,
+   "opens": 1.0,
    "orders": 0.0,
    "sends": 0.0
   },
@@ -811,122 +851,135 @@
    "visits": 5.0,
    "users": 2.0,
    "opens": 0.0,
+   "cart_add": 0.0,
    "orders": 0,
    "sends": 0,
-   "forms": 0
+   "cart_send": 0
   },
   {
    "d": "2026-11-14",
    "visits": 6.0,
    "users": 2.0,
    "opens": 0.0,
+   "cart_add": 0.0,
    "orders": 0,
    "sends": 0,
-   "forms": 0
+   "cart_send": 0
   },
   {
    "d": "2026-11-16",
    "visits": 4.0,
    "users": 3.0,
    "opens": 0.0,
+   "cart_add": 0.0,
    "orders": 0,
    "sends": 0,
-   "forms": 0
+   "cart_send": 0
   },
   {
    "d": "2026-11-17",
    "visits": 8.0,
    "users": 2.0,
    "opens": 0.0,
+   "cart_add": 0.0,
    "orders": 0,
    "sends": 0,
-   "forms": 0
+   "cart_send": 0
   },
   {
    "d": "2026-11-18",
    "visits": 4.0,
    "users": 2.0,
    "opens": 0.0,
+   "cart_add": 0.0,
    "orders": 0,
    "sends": 0,
-   "forms": 0
+   "cart_send": 0
   },
   {
    "d": "2026-11-19",
    "visits": 7.0,
    "users": 4.0,
    "opens": 0.0,
+   "cart_add": 0.0,
    "orders": 0,
    "sends": 0,
-   "forms": 0
+   "cart_send": 0
   },
   {
    "d": "2026-11-20",
    "visits": 7.0,
    "users": 3.0,
    "opens": 0.0,
+   "cart_add": 0.0,
    "orders": 0,
    "sends": 0,
-   "forms": 0
+   "cart_send": 0
   },
   {
    "d": "2026-11-21",
    "visits": 6.0,
    "users": 2.0,
    "opens": 0.0,
-   "orders": 0.0,
-   "sends": 0.0,
-   "forms": 1.0
+   "cart_add": 0.0,
+   "orders": 0,
+   "sends": 0,
+   "cart_send": 0
   },
   {
    "d": "2026-11-22",
    "visits": 7.0,
    "users": 4.0,
-   "opens": 3.0,
-   "orders": 5.0,
-   "sends": 0.0,
-   "forms": 0.0
+   "opens": 0.0,
+   "cart_add": 0.0,
+   "orders": 0,
+   "sends": 0,
+   "cart_send": 0
   },
   {
    "d": "2026-11-23",
    "visits": 6.0,
    "users": 4.0,
-   "opens": 5.0,
-   "orders": 2.0,
-   "sends": 1.0,
-   "forms": 1.0
+   "opens": 0.0,
+   "cart_add": 0.0,
+   "orders": 0,
+   "sends": 0,
+   "cart_send": 0
   },
   {
    "d": "2026-11-24",
    "visits": 17.0,
    "users": 11.0,
-   "opens": 3.0,
-   "orders": 1.0,
-   "sends": 0.0,
-   "forms": 0.0
+   "opens": 0.0,
+   "cart_add": 0.0,
+   "orders": 0,
+   "sends": 0,
+   "cart_send": 0
   },
   {
    "d": "2026-11-25",
    "visits": 237.0,
    "users": 197.0,
-   "opens": 45.0,
-   "orders": 1.0,
-   "sends": 0.0,
-   "forms": 0.0
+   "opens": 3.0,
+   "cart_add": 0.0,
+   "orders": 0,
+   "sends": 0,
+   "cart_send": 0
   },
   {
    "d": "2026-11-26",
-   "visits": 170.0,
-   "users": 155.0,
-   "opens": 12.0,
+   "visits": 177.0,
+   "users": 161.0,
+   "opens": 26.0,
+   "cart_add": 1.0,
    "orders": 0.0,
    "sends": 0.0,
-   "forms": 2.0
+   "cart_send": 1.0
   }
  ],
  "notes": [
   "Расход и клики — отчёт Директа (по текущему дню может отставать), конверсии — Метрика по последнему клику.",
-  "Общие цели 697800506 / 697805485 / 697806525 не работают: в них другие идентификаторы событий.",
-  "Заявка — автоцель Метрики 684840552 «отправка формы»."
+  "Цели: 697800506 «Открыть любой конструктор», 697805485 «Оформить заказ», 697806525 «Отправить заказ», 690559743 «В корзину», 690565819 «Отправить заявку из корзины».",
+  "697805485 и 697806525 пока не срабатывают: сайт отправляет другие идентификаторы событий (oformlenie-zakaza / otpravil-zakaz), из-за чего оформления и отправки видны только в постраничных целях."
  ]
 }
